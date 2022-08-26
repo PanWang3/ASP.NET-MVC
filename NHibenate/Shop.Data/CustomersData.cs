@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shop.Data
 {
@@ -57,10 +55,10 @@ namespace Shop.Data
             {
                 //插入新记录，返回记录主键值
                 var identifier = session.Save(customers);
-                
+
                 //如果不存在就插入否则更新
                 //session.SaveOrUpdate(customers);
-                
+
                 //将对象持久化写入数据库，如果不调用此方法，那么操作结束后修改记录不能写入数据库中
                 session.Flush();
                 return string.IsNullOrEmpty(identifier.ToString());
